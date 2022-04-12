@@ -52,7 +52,7 @@ class _demoState extends State<demo> {
               Center(
                 child: Container(
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 8, right: 8, top: 20),
+                    padding: const EdgeInsets.only(left: 8, right: 8, top: 2),
                     child: Column(
                       children: [
                         ExpansionPanelList(
@@ -94,27 +94,39 @@ class _demoState extends State<demo> {
                                               gender.gender();
                                             },
                                             child: Container(
-                                                height: 50,
+                                                height: 35,
                                                 width: MediaQuery.of(context)
                                                         .size
                                                         .width *
-                                                    0.32,
+                                                    0.18,
                                                 decoration: BoxDecoration(
-                                                  color: gender.animation
-                                                      ? Colors.yellow
-                                                      : Colors.white,
-                                                  // color: Color.fromARGB(
-                                                  //     255, 253, 243, 153),
+                                                    color: gender.animation
+                                                        ? Color.fromARGB(
+                                                            255, 233, 245, 233)
+                                                        : Colors.white,
+                                                    // color: Color.fromARGB(
+                                                    //     255, 253, 243, 153),
 
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25),
+                                                    border: Border.all(
+                                                      color: gender.animation
+                                                          ? Color.fromARGB(255,
+                                                              128, 241, 128)
+                                                          : Colors.grey,
+                                                    )),
                                                 child: Center(
                                                     child: Text(
-                                                  "COMPLETED -01",
+                                                  "ALL",
                                                   style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 10),
+                                                      color: gender.animation
+                                                          ? Color.fromARGB(
+                                                              255, 11, 138, 11)
+                                                          : Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11),
                                                 ))),
                                           ),
                                           SizedBox(
@@ -125,26 +137,38 @@ class _demoState extends State<demo> {
                                               gender.changegender();
                                             },
                                             child: Container(
-                                                height: 50,
+                                                height: 35,
                                                 width: MediaQuery.of(context)
                                                         .size
                                                         .width *
-                                                    0.32,
+                                                    0.25,
                                                 decoration: BoxDecoration(
-                                                  color: gender.female
-                                                      ? Colors.yellow
-                                                      : Colors.white,
-                                                  // color: Color.fromARGB(
-                                                  //     255, 236, 233, 233),
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                ),
+                                                    color: gender.female
+                                                        ? Color.fromARGB(
+                                                            255, 233, 245, 233)
+                                                        : Colors.white,
+                                                    // color: Color.fromARGB(
+                                                    //     255, 236, 233, 233),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25),
+                                                    border: Border.all(
+                                                      color: gender.female
+                                                          ? Color.fromARGB(255,
+                                                              128, 241, 128)
+                                                          : Colors.grey,
+                                                    )),
                                                 child: Center(
                                                     child: Text(
-                                                  "IN LOADING -01",
+                                                  "LOADING",
                                                   style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 10),
+                                                      color: gender.female
+                                                          ? Color.fromARGB(
+                                                              255, 11, 138, 11)
+                                                          : Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11),
                                                 ))),
                                           ),
                                           SizedBox(
@@ -152,103 +176,246 @@ class _demoState extends State<demo> {
                                           ),
                                           InkWell(
                                             onTap: () {
-                                              gender.weightkg;
+                                              gender.weight();
                                             },
                                             child: Container(
-                                                height: 50,
+                                                height: 35,
                                                 width: MediaQuery.of(context)
                                                         .size
                                                         .width *
-                                                    0.32,
+                                                    0.25,
                                                 decoration: BoxDecoration(
-                                                  color: gender.weightkg
-                                                      ? Colors.yellow
-                                                      : Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(10),
-                                                ),
+                                                    color: gender.third
+                                                        ? Color.fromARGB(
+                                                            255, 233, 245, 233)
+                                                        : Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25),
+                                                    border: Border.all(
+                                                      color: gender.third
+                                                          ? Color.fromARGB(255,
+                                                              128, 241, 128)
+                                                          : Colors.grey,
+                                                    )),
                                                 child: Center(
                                                     child: Text(
-                                                  "IN LOADING -01",
+                                                  "UNLOADING",
                                                   style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 10),
+                                                      color: gender.third
+                                                          ? Color.fromARGB(
+                                                              255, 11, 138, 11)
+                                                          : Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11),
                                                 ))),
                                           ),
                                           SizedBox(
                                             width: 15,
                                           ),
-                                          Container(
-                                              height: 50,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.32,
-                                              decoration: BoxDecoration(
-                                                color: Color.fromARGB(
-                                                    255, 236, 233, 233),
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Center(
-                                                  child: Text(
-                                                "IN LOADING -01",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 10),
-                                              ))),
+                                          InkWell(
+                                            onTap: () {
+                                              gender.completed();
+                                            },
+                                            child: Container(
+                                                height: 35,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.25,
+                                                decoration: BoxDecoration(
+                                                    color: gender.four
+                                                        ? Color.fromARGB(
+                                                            255, 233, 245, 233)
+                                                        : Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25),
+                                                    border: Border.all(
+                                                      color: gender.four
+                                                          ? Color.fromARGB(255,
+                                                              128, 241, 128)
+                                                          : Colors.grey,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  "COMPLETED",
+                                                  style: TextStyle(
+                                                      color: gender.four
+                                                          ? Color.fromARGB(
+                                                              255, 11, 138, 11)
+                                                          : Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11),
+                                                ))),
+                                          ),
                                           SizedBox(
                                             width: 15,
                                           ),
-                                          Container(
-                                              height: 50,
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.32,
-                                              decoration: BoxDecoration(
-                                                color: Color.fromARGB(
-                                                    255, 236, 233, 233),
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                              ),
-                                              child: Center(
-                                                  child: Text(
-                                                "IN LOADING -01",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 10),
-                                              ))),
+                                          InkWell(
+                                            onTap: () {
+                                              gender.documents();
+                                            },
+                                            child: Container(
+                                                height: 35,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.28,
+                                                decoration: BoxDecoration(
+                                                    color: gender.five
+                                                        ? Color.fromARGB(
+                                                            255, 233, 245, 233)
+                                                        : Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25),
+                                                    border: Border.all(
+                                                      color: gender.five
+                                                          ? Color.fromARGB(255,
+                                                              128, 241, 128)
+                                                          : Colors.grey,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  "DOCUMENTS",
+                                                  style: TextStyle(
+                                                      color: gender.five
+                                                          ? Color.fromARGB(
+                                                              255, 11, 138, 11)
+                                                          : Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11),
+                                                ))),
+                                          ),
                                           SizedBox(
                                             width: 15,
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              gender.payments();
+                                            },
+                                            child: Container(
+                                                height: 35,
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.25,
+                                                decoration: BoxDecoration(
+                                                    color: gender.six
+                                                        ? Color.fromARGB(
+                                                            255, 233, 245, 233)
+                                                        : Colors.white,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            25),
+                                                    border: Border.all(
+                                                      color: gender.six
+                                                          ? Color.fromARGB(255,
+                                                              128, 241, 128)
+                                                          : Colors.grey,
+                                                    )),
+                                                child: Center(
+                                                    child: Text(
+                                                  "PAYMENTS",
+                                                  style: TextStyle(
+                                                      color: gender.six
+                                                          ? Color.fromARGB(
+                                                              255, 11, 138, 11)
+                                                          : Colors.black,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 11),
+                                                ))),
                                           ),
                                         ],
                                       ),
                                     ));
                               },
                               body: ListTile(
-                                  title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    children: [
-                                      InkWell(
-                                        onTap: () {
-                                          Navigator.push(
-                                            context,
-                                            CupertinoPageRoute(
-                                                builder:
-                                                    (BuildContext context) =>
-                                                        search()),
-                                          );
-                                        },
-                                        child: Container(
-                                          height: 50,
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width *
-                                              0.85,
+                                  title: Container(
+                                // decoration: BoxDecoration(
+                                //     color: Color.fromARGB(255, 204, 202, 202),
+                                //     borderRadius: BorderRadius.only(
+                                //         topLeft: Radius.circular(10),
+                                //         topRight: Radius.circular(10))),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          CupertinoPageRoute(
+                                              builder: (BuildContext context) =>
+                                                  search()),
+                                        );
+                                      },
+                                      child: Container(
+                                        height: 50,
+                                        width:
+                                            MediaQuery.of(context).size.width *
+                                                0.87,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.grey.withOpacity(0.2),
+                                              spreadRadius: 5,
+                                              blurRadius: 7,
+                                              offset: Offset(0,
+                                                  3), // changes position of shadow
+                                            ),
+                                          ],
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          //  border: Border.all(color: Colors.grey)
+                                        ),
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(
+                                              left: 10, right: 10),
+                                          child: Row(
+                                            children: [
+                                              Text(
+                                                "Enter Trip id or Lorry Number",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 75, 74, 74),
+                                                    fontSize: 14),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Divider(),
+                                    SizedBox(
+                                      height: 5,
+                                    ),
+                                    Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "View By Month & Year",
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Container(
                                           decoration: BoxDecoration(
                                             color: Colors.white,
                                             boxShadow: [
@@ -265,124 +432,93 @@ class _demoState extends State<demo> {
                                                 BorderRadius.circular(10),
                                             //  border: Border.all(color: Colors.grey)
                                           ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                left: 10, right: 10),
-                                            child: Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.search,
-                                                  color: Colors.grey,
-                                                ),
-                                                SizedBox(
-                                                  width: 10,
-                                                ),
-                                                Text(
-                                                  "Enter Trip id or Vehicle no",
-                                                  style: TextStyle(
-                                                      color: Colors.grey,
-                                                      fontSize: 14),
-                                                ),
-                                              ],
-                                            ),
+                                          height: 40,
+                                          width: 65,
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                "JAN",
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Color.fromARGB(
+                                                        255, 8, 65, 110)),
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Icon(
+                                                Icons.arrow_drop_down_outlined,
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ),
-                                      // SizedBox(
-                                      //   width: 5,
-                                      // ),
-                                      // Container(
-                                      //     height: 40,
-                                      //     width: MediaQuery.of(context).size.width * 0.38,
-                                      //     decoration: BoxDecoration(
-                                      //       color: Colors.purple,
-                                      //       borderRadius: BorderRadius.circular(10),
-                                      //     ),
-                                      //     child: Center(
-                                      //         child: Text(
-                                      //       "+CREATE NEW TRIP",
-                                      //       style: TextStyle(color: Colors.white, fontSize: 13),
-                                      //     ))),
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text("View By Month"),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Container(
                                           decoration: BoxDecoration(
-                                            border:
-                                                Border.all(color: Colors.grey),
-                                          ),
-                                          width: 180,
-                                          child: Row(
-                                            children: [
-                                              Expanded(
-                                                  child: TextField(
-                                                textAlign: TextAlign.center,
-                                                decoration: InputDecoration(
-                                                    border: InputBorder.none,
-                                                    hintText: "Month",
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 16,
-                                                        color: Colors.grey)),
-                                              )),
-                                              Container(
-                                                  height: 50,
-                                                  child: VerticalDivider(
-                                                      color: Colors.grey)),
-                                              Expanded(
-                                                  child: TextField(
-                                                textAlign: TextAlign.center,
-                                                decoration: InputDecoration(
-                                                    border: InputBorder.none,
-                                                    hintText: "Year",
-                                                    hintStyle: TextStyle(
-                                                        fontSize: 16,
-                                                        color: Colors.grey)),
-                                              )),
+                                            color: Colors.white,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.grey
+                                                    .withOpacity(0.2),
+                                                spreadRadius: 5,
+                                                blurRadius: 7,
+                                                offset: Offset(0,
+                                                    3), // changes position of shadow
+                                              ),
                                             ],
-                                          ))
-                                    ],
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text("View only"),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Container(
-                                          decoration: BoxDecoration(
-                                            border:
-                                                Border.all(color: Colors.grey),
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            //  border: Border.all(color: Colors.grey)
                                           ),
-                                          width: 180,
-                                          child: TextField(
-                                            textAlign: TextAlign.center,
-                                            decoration: InputDecoration(
-                                                border: InputBorder.none,
-                                                hintText: "Dropdown",
-                                                hintStyle: TextStyle(
-                                                    fontSize: 16,
-                                                    color: Colors.grey)),
-                                          ))
-                                    ],
-                                  ),
-                                ],
+                                          height: 40,
+                                          width: 65,
+                                          child: Row(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Text(
+                                                "2022",
+                                                style: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Color.fromARGB(
+                                                        255, 8, 65, 110)),
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Icon(
+                                                Icons.arrow_drop_down_outlined,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text(
+                                          "VIEW",
+                                          style: TextStyle(
+                                              decoration:
+                                                  TextDecoration.underline,
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.bold,
+                                              color: Color.fromARGB(
+                                                  255, 8, 65, 110)),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               )),
                               isExpanded: _expanded,
                             )

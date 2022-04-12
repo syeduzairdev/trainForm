@@ -5,37 +5,64 @@ class providermodel with ChangeNotifier {
   bool female = false;
   bool weightlbs = false;
   bool weightkg = false;
-
+  bool third = false;
+  bool four = false;
+  bool five = false;
+  bool six = false;
   gender() {
     animation = true;
     female = false;
+    third = false;
     notifyListeners();
   }
 
   changegender() {
     animation = false;
     female = true;
+    third = false;
+    four = false;
+    five = false;
+    six = false;
     notifyListeners();
   }
 
   weight() {
-    animation = true;
-    female = false;
-    notifyListeners();
-  }
-
-  changeweight() {
     animation = false;
-    female = true;
+    female = false;
+    third = true;
+    four = false;
+    five = false;
+    six = false;
     notifyListeners();
   }
 
-  iconss() {
-    animation = true;
+  completed() {
+    animation = false;
+    female = false;
+    third = false;
+    four = true;
+    five = false;
+    six = false;
     notifyListeners();
   }
 
-  periodcolours(int colour) {
+  documents() {
+    animation = false;
+    female = false;
+    third = false;
+    four = false;
+    five = true;
+    six = false;
+    notifyListeners();
+  }
+
+  payments() {
+    animation = false;
+    female = false;
+    third = false;
+    four = false;
+    five = false;
+    six = true;
     notifyListeners();
   }
 }
