@@ -1,3 +1,4 @@
+import 'package:fiverr/createTrip.dart';
 import 'package:fiverr/drawer.dart';
 import 'package:fiverr/provider.dart';
 import 'package:fiverr/search.dart';
@@ -587,17 +588,26 @@ class _demoState extends State<demo> {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Container(
-                  height: 45,
-                  width: 150,
-                  decoration: BoxDecoration(
-                      color: Colors.black,
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Center(
-                      child: Text(
-                    "CREATE NEW TRIP",
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  )),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(
+                          builder: (BuildContext context) => createTrip()),
+                    );
+                  },
+                  child: Container(
+                    height: 45,
+                    width: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                        child: Text(
+                      "CREATE NEW TRIP",
+                      style: TextStyle(color: Colors.white, fontSize: 14),
+                    )),
+                  ),
                 ),
               )
             ],
